@@ -1,17 +1,19 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 import { ListItems } from './TodosStyles';
-import { TodosInterface } from './TodosModel';
+import { RoboContext } from '../../store/robots-context';
 
-const Todos: FC<TodosInterface> = ({ items, onRemoveRobot }) => {
+const Todos: FC = () => {
+
+    const roboCtx = useContext(RoboContext);
 
     return (
         <ListItems>
-            {items.map((string, i) => (
+            {roboCtx.items.map((src, i) => (
                 <TodoItem
-                    src={string}
+                    src={src}
                     key={i}
-                    onRemoveRobot={onRemoveRobot.bind(null, string)}
+                    onRemoveRobot={roboCtx.removeRobot.bind(null, src)}
                 />
             ))}
         </ListItems>

@@ -1,19 +1,18 @@
-import { FC, FormEvent, useRef } from 'react';
+import { FC, FormEvent, useContext, useRef } from 'react';
 import * as S from './NewTodoItemStyles';
-
-interface NewTodoItemInter {
-    onAddRobot: (e: string) => void
-}
+import { RoboContext } from '../../store/robots-context';
 
 
-const NewTodoItem: FC<NewTodoItemInter> = ({ onAddRobot }) => {
+const NewTodoItem: FC = () => {
+
+    const roboCtx = useContext(RoboContext);
 
     const todoInputRef = useRef<HTMLInputElement>(null);
 
     const submitHandler = (event: FormEvent) => {
         event.preventDefault();
         const enteredText = todoInputRef.current?.value;
-        onAddRobot(enteredText ?? '');
+        roboCtx.addRobot(enteredText || '');
     };
 
     return (
