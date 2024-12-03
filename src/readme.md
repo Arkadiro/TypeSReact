@@ -1,0 +1,1 @@
+This is TypeScript concepts for modern Front-End development 
