@@ -5,4 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #151925;
+  color: white;
+}
+main {
+  max-width: 40rem;
+  margin: 2rem auto;
 }
