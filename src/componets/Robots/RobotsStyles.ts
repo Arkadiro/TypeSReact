@@ -4,5 +4,6 @@ export const RobotItems = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 612px;
+    width: 40rem;
+    margin: 2rem auto;
 `;

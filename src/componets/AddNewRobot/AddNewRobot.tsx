@@ -7,19 +7,19 @@ const NewRobotItem: FC = () => {
 
     const roboCtx = useContext(RoboContext);
 
-    const todoInputRef = useRef<HTMLInputElement>(null);
+    const robotInputRef = useRef<HTMLInputElement>(null);
 
     const submitHandler = (event: FormEvent) => {
         event.preventDefault();
-        const enteredText = todoInputRef.current?.value;
+        const enteredText = robotInputRef.current?.value;
         roboCtx.addRobot(enteredText || '');
     };
 
     return (
         <S.Form onSubmit={submitHandler}>
-            <S.Label htmlFor='text'>Todo text</S.Label>
-            <S.Input type='text' id='text' ref={todoInputRef} />
-            <S.Button>Add Todo</S.Button>
+            <S.Label htmlFor='text'>enter text to add Robot</S.Label>
+            <S.Input type='text' id='text' ref={robotInputRef} />
+            <S.Button>Add Robot</S.Button>
         </S.Form>
     )
 };
