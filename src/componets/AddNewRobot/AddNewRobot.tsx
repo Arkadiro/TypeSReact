@@ -1,9 +1,9 @@
 import { FC, FormEvent, useContext, useRef } from 'react';
-import * as S from './NewTodoItemStyles';
-import { RoboContext } from '../../store/robots-context';
+import * as S from './AddNewRobotStyles';
+import { RoboContext } from '../../store/robotsContext';
 
 
-const NewTodoItem: FC = () => {
+const NewRobotItem: FC = () => {
 
     const roboCtx = useContext(RoboContext);
 
@@ -24,4 +24,4 @@ const NewTodoItem: FC = () => {
     )
 };
 
-export default NewTodoItem;
+export default NewRobotItem;

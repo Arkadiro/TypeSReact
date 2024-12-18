@@ -1,7 +1,7 @@
 import { createContext, FC, useState } from 'react';
-import { TodosInterface } from '../componets/Todos/TodosModel';
+import { RobotsItemInterface } from '../componets/Robots/RobotsModel';
 
-interface InitialContextObjI extends TodosInterface {
+interface InitialContextObjI extends RobotsItemInterface {
     addRobot: (src: string) => void;
 };
 

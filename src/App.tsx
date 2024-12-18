@@ -1,14 +1,13 @@
 import { FC } from 'react';
-import NewTodoItem from './componets/NewTodoItem/NewTodoItem';
-import Todos from './componets/Todos/Todos';
-import RoboContextPrivider from './store/robots-context';
+import Robots from './componets/Robots/Robots';
+import RoboContextPrivider from './store/robotsContext';
 
 const App: FC = () => {
 
   return (
     <RoboContextPrivider>
-      <NewTodoItem ></NewTodoItem>
-      <Todos />
+      <Robots.NewRobotItem />
+      <Robots />
     </RoboContextPrivider>
   );
 }
