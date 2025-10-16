@@ -14,6 +14,8 @@ const NewTodoItem: FC<NewTodoItemInter> = ({ onAddRobot }) => {
         event.preventDefault();
         const enteredText = todoInputRef.current?.value;
         onAddRobot(enteredText ?? '');
+        if (todoInputRef && todoInputRef.current) todoInputRef.current.value = '';
+       
     };
 
     return (
