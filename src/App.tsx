@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import NewTodoItem from './componets/NewTodoItem/NewTodoItem';
 import Todos from './componets/Todos/Todos';
+import ClassComp  from './componets/ClassComponent/ClassComponents';
 
 const url = 'https://robohash.org/rob';
 
@@ -24,6 +25,7 @@ const App: FC = () => {
     <div>
       <NewTodoItem onAddRobot={addRobot}></NewTodoItem>
       <Todos items={robots} onRemoveRobot={removeRobot} />
+      <ClassComp></ClassComp>
     </div>
   );
 }
