@@ -3,16 +3,12 @@ import * as S from './ClasssComponentStyles';
 
 const ClassComp: FC = () => {
 
-    interface ElfInt {
+    interface CharacterInt {
         attack(): void;
     }
 
-    interface PowerElfInt extends ElfInt {
-        fireAttack(): void;
-    }
-
     // Class
-    class Elf implements PowerElfInt {
+    class Character implements CharacterInt {
         constructor(public name: string, public weapon: string) {
             this.name = name;
             this.weapon = weapon;
@@ -21,21 +17,20 @@ const ClassComp: FC = () => {
         attack() {
             return console.log('attacks with ' + this.weapon);
         }
-        fireAttack() {
-            return console.log('attacks with ' + this.weapon)
+    }
+
+    class Elf extends Character {
+        constructor(public name: string, public weapon: string, public type: string) {
+            super(name, weapon);
+            this.type = type;
         }
     }
 
-    const peter = new Elf('Peter', 'stones');
-    const sam = new Elf('Sam', 'fire');
-
-    Object.create({}, )
+    const peter = new Character('Peter', 'stones');
+    const sam = new Elf('Sam', 'fire', 'forest');
 
     peter.attack();
-    sam.fireAttack();
-
-    console.log(typeof peter);
-
+    sam.attack();
 
     return (
         <S.ClassComp></S.ClassComp>
