@@ -36,6 +36,9 @@ const ClassComp: FC = () => {
     peter.sleeps();
     sam.attack();
 
+    console.log(sam instanceof Elf);
+    console.log(sam instanceof Character);
+
     return (
         <S.ClassComp></S.ClassComp>
     )
