@@ -4,7 +4,7 @@ import * as S from './ClasssComponentStyles';
 const ClassComp: FC = () => {
 
     interface CharacterInt {
-        attack(): void;
+        sleeps(): void;
     }
 
     // Class
@@ -14,8 +14,8 @@ const ClassComp: FC = () => {
             this.weapon = weapon;
         }
 
-        attack() {
-            return console.log('attacks with ' + this.weapon);
+        sleeps() {
+            return console.log(this.name + ' sleeps');
         }
     }
 
@@ -24,12 +24,16 @@ const ClassComp: FC = () => {
             super(name, weapon);
             this.type = type;
         }
+
+        attack() {
+            return console.log( 'attacks with ' + this.weapon);
+        }
     }
 
     const peter = new Character('Peter', 'stones');
     const sam = new Elf('Sam', 'fire', 'forest');
 
-    peter.attack();
+    peter.sleeps();
     sam.attack();
 
     return (
